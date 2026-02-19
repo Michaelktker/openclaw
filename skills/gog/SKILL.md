@@ -64,6 +64,12 @@ Attachments
 - Download attachment: `gog gmail attachment <messageId> <attachmentId> --out /path/to/file`
 - Download with original name: `gog gmail attachment <messageId> <attachmentId> --name <filename>`
 
+Attachment ID handling:
+
+- Gmail attachment IDs can be 200+ characters. Always quote the `<attachmentId>` to avoid shell escaping issues.
+- If download fails, retry once (may be a transient Gmail API error).
+- Example: `gog gmail attachment <messageId> "<attachmentId>" --out /path/to/file`
+
 Calendar Colors
 
 - Use `gog calendar colors` to see all available event colors (IDs 1-11)
